@@ -1,0 +1,150 @@
+body {
+    margin: 0px;
+    background-color: white;
+}
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: "Lucida Handwriting", cursive;
+}
+.content {
+    display: flex;
+    justify-content: center ;
+    /* border: solid 1px lime; */
+}
+
+.left-side {
+    /* border: solid 1px blue; */
+    min-width: 50px;
+    min-height: 50px;
+    flex: 1;
+}
+
+.center {
+    /* border: solid 1px purple; */
+    min-width: 50px;
+    min-height: 50px;
+    flex: 1;
+}
+
+.right-side {
+    /* border: solid 1px red; */
+    min-width: 50px;
+    min-height: 50px;
+    flex: 1;
+}
+.hearts {
+    display: flex;
+    justify-content: center;
+    /* border: solid 1px rgb(255, 120, 120); */
+    width: 100%;
+    min-height: 30px;
+}
+.heart {
+    margin: 2px;
+    max-width: 30px;
+    max-height: 30px;
+}
+.enterWord {
+    min-width: 20px;
+    min-height: 25px;
+}
+.texte {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    /* border: solid 1px darkblue; */
+}
+.buton1 {
+    margin-left: 3px;
+    /* border: dashed 1px red; */
+    background-color: yellowgreen;
+    height: 30px;
+    width: 30px;
+}
+.buton2 {
+    margin-left: 3px;
+    /* border: dashed 1px red; */
+    background-color: crimson;
+    height: 28px;
+    width: 28px;
+}
+.description {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid khaki; */
+    /* background-color: lawngreen; */
+    min-height: 45px;
+    min-width: 35px;
+}
+.photoConteiner {
+    /* border: 2px solid brown; */
+    /* background-color: chartreuse; */
+    /* min-height: 300px; */
+    /* min-width: 300px; */
+    border: 0px;
+}
+.phooooto {
+    width: 100%;
+    min-width: 100px;
+}
+.letter {
+    display: flex;
+    justify-content: center;
+}
+.hiden {
+    display: none;
+}
+.login-container {
+    display: flex; 
+    /* justify-content: center; */
+}
+.input-and-button {
+    display: flex;
+}
+.input {
+    width: 100%;
+}
+.button {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+}
+.restart-button {
+    width: 50px;
+    height: 20px;
+    color: blueviolet;
+}
+.refresh-button {
+    display: flex;
+    justify-content: center;
+}
+.common-lable-style {
+    display: flex;
+    justify-content: center;
+    font-family: "Lucida Handwriting", cursive;
+}
+.stickerHeart {
+    max-width: 1200px;
+    max-height: 200px;
+    position: relative;
+    top: 150px; left: 100px;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+.leftHeart {
+    max-width: 150px;
+    max-height: 150px;
+    position: relative;
+    top: 150px; left: 100px;
+    z-index: -1;
+    transform: rotate(-315deg);
+}
+.notNormalHeart {
+    max-width : 100px;
+    max-height: 100px;
+    transform: rotate(25deg);
+    position: relative;
+    top: 500px; left: 100px;
+}

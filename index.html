@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gallows</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="left-side">
+                <img src="heart.png" alt="asd" class="leftHeart"/>
+                <img src="heart.png" alt="" class="notNormalHeart"/>
+            </div>
+            <div class="center">
+                <div class="hearts">
+                    <div id = "heart1" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                    <div id = "heart2" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                    <div id = "heart3" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                    <div id = "heart4" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                    <div id = "heart5" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                    <div id = "heart6" class="heart">
+                        <img src="heart.png" alt="sorry" class="heart">
+                    </div>
+                </div>
+                <div class="header">
+                    <h1>¤ШИБЕНИЦЯ¤</h1>
+                </div>
+               
+                <div id="loginContainer" >
+                    <div class="common-lable-style">ВВЕДИ ІМ'Я</div>
+                    <div class="input-and-button" >
+                        <input id="userName" type="text" class="input"/>
+                        <button
+                            class="buton1"
+                            onclick="userLoginName()">
+                            ок
+                        </button>
+                    </div>
+                    <div class="description"><h3 id="firstMassage"></h3></div>
+                </div>
+                <div id="gameHost" class="hiden" >
+                    <div id="GuesedWord1" class="common-lable-style">ТУТ ЗАГАДАНЕ СЛОВО</div>
+                    <div id="words" class="enterWord">
+                        <div class="letter">
+                            <h3 id="letters"></h3>
+                        </div>
+                    </div>
+                    <div id = "texteAndButomn" class="texte">
+                        <input id="inputText" type="text" class="input" onkeypress="enterPress(event)" />
+                        <button
+                            id="button"
+                            onclick="buttonClick()"
+                            onmouseout="butomnOff()" 
+                            onmousedown="butomnOn()" 
+                            onmouseup="butomnOff()" 
+                            class="buton1">
+                            ок
+                        </button>
+                    </div>
+                    <div id="RestartButton" class = "hiden">
+                        <button onclick="restartClick()">Restart</button>
+                    </div>
+                    <div class="description">
+                        <h3 id="description">
+                        </h3>
+                    </div>
+                    <div class="photoConteiner">
+                    <img id="gallowsImage" src="Gallow0.png" alt="photok" class="phooooto">
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div>
+                    <img src="heart.png" alt="" class="stickerHeart"/>
+                    
+                    <!-- <img src="minus.png" alt=""> -->
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="word-block"></div>
+        <div class="image-block"></div> -->
+    </body>
+    <script src="index.js"></script>
+</html>
