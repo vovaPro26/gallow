@@ -4,9 +4,21 @@
 let enteredWord;
 let randomWord;
 let errorCounter = 0;
+let wordCounter = 0;
 
-
-
+let words = [
+    { "word": "ТРИКУТНИК", "description": "геометрична фігура"},
+    { "word": "КВАДРАТ", "description": "геометрична фігура"},
+    { "word": "КОЛО", "description": "геометрична фігура"},
+    { "word": "РОМБ", "description": "геометрична фігура"},
+    { "word": "ОВАЛ", "description": "геометрична фігура"},
+    { "word": "ПАРАЛЕЛЕПІПЕД", "description": "об'ємна геоментрична фігура"},
+    { "word": "ПРЯМОКУТНИК", "description": "геометрична фігура"},
+    { "word": "СЕРЦЕ", "description": "орган людини"},
+    { "word": "ПЛЮС", "description": "математичний знак"},
+    { "word":"МІНУС", "description": "математичний знак"},
+    { "word":"ДОРІВНЮЄ", "description": "математичний знак"},
+];
 const sayHello = function(){
     const name = getUserName();
     if (!name.length) {
@@ -19,7 +31,6 @@ const sayHello = function(){
 
 
 const chooseRandomWord = function() {
-    let words = ["ТРИКУТНИК","КВАДРАТ","КОЛО","РОМБ","ОВАЛ","ПАРАЛЕЛЕПІПЕД","ПРЯМОКУТНИК","СЕРЦЕ","ПЛЮС","МІНУС","ДОРІВНЮЄ"];
     let randNumber = randNum(0,words.length);
     return words[randNumber];
 }
@@ -35,6 +46,7 @@ const startGame = function() {
     enteredWord = getWordTemplate(randomWord);
     console.log(enteredWord);
     showWord(enteredWord);
+    showWord1(randomWord.description)
     allInput.classList.remove("hiden");
 }
     
@@ -42,6 +54,11 @@ const showWord = function(arra) {
     let word = document.getElementById("letters");
     word.innerText = arra.join(" ");
     
+}
+
+const showWord1 = function(message) {
+    let descriptionWordText = document.getElementById("descriptionForWord");
+    descriptionWordText.innerText = message;
 }
 
 const errorHeart = function(errorCount) {
@@ -81,7 +98,7 @@ const isWordGuessed = function(arr) {
 
 const getWordTemplate = function(word) {
     let lowDashes = [];
-    for(let i = 0; i < word.length; i++) {
+    for(let i = 0; i < word.word.length; i++) {
         lowDashes.push("_");
     };
     return lowDashes;
@@ -165,10 +182,10 @@ const checkUserInput = () => {
         inputLetterElement.value="";
         return;
     }
-    let checking = randomWord.includes(inputLetter);
+    let checking = randomWord.word.includes(inputLetter);
     if (checking) {
-        for(let i = 0; i <= randomWord.length; i++) {
-            if (inputLetter===randomWord[i]) {
+        for(let i = 0; i <= randomWord.word.length; i++) {
+            if (inputLetter===randomWord.word[i]) {
                 enteredWord[i] = inputLetter;
             }
         }
@@ -177,23 +194,32 @@ const checkUserInput = () => {
         errorCounter += 1;
     }
     showWord(enteredWord);
+    
     inputLetterElement.value="";
     inputLetterElement.focus();
     errorHeart(errorCounter);
     changeImg(errorCounter);
     isWordGuessed(enteredWord)
     if (isWordGuessed(enteredWord)) {
-        showMessage("Ти виграв." + " Ти вгадав слово " + randomWord);
+        wordCounter += 1;
+        showGuesedWord(wordCounter)
+        showMessage("Ти виграв." + " Ти вгадав слово " + randomWord.word);
         allInput.classList.add("hiden");
         restartDiv.classList.remove("hiden");
-        restartDiv.classList.add("refresh-button")
+        restartDiv.classList.add("refresh-button");
+
     }
     if (errorCounter > 5) {
-        showMessage("Ти програв." + " Ти не вгадав слово " + randomWord);
+        showMessage("Ти програв." + " Ти не вгадав слово " + randomWord.word);
         allInput.classList.add("hiden");
         restartDiv.classList.remove("hiden");
         restartDiv.classList.add("refresh-button");
     }
+}
+
+const showGuesedWord = function(guesedWords) {
+    let wordCounterElement = document.getElementById("wordCounter");
+    wordCounterElement.innerText = guesedWords;
 }
 
 const butomnOn = function() {
