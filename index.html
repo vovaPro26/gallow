@@ -50,10 +50,11 @@
                 </div>
                 <div id="gameHost" class="hiden" >
                     <div id="GuesedWord1" class="common-lable-style">ТУТ ЗАГАДАНЕ СЛОВО</div>
-                    <div id="words" class="enterWord">
+                    <div id="words" class="enterWord"> 
                         <div class="letter">
                             <h3 id="letters"></h3>
                         </div>
+                        <h3><div id="descriptionForWord" class="descriptionForWord"></div></h3>
                     </div>
                     <div id = "texteAndButomn" class="texte">
                         <input id="inputText" type="text" class="input" onkeypress="enterPress(event)" />
@@ -80,6 +81,10 @@
                 </div>
             </div>
             <div class="right-side">
+                <div class="end">
+                    <h2 style= "margin-right: 5px";>Слів вгадано:</h2>
+                    <h2 id="wordCounter">0</h2>
+                </div>
                 <div>
                     <img src="heart.png" alt="" class="stickerHeart"/>
                     

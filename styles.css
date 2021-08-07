@@ -148,3 +148,13 @@ body {
     position: relative;
     top: 500px; left: 100px;
 }
+.descriptionForWord {
+    display: flex;
+    justify-content: center;
+    font-family: "Lucida Handwriting", cursive;
+}
+.end {
+    display: flex;
+    justify-content: flex-end;
+    font-family: cursive;
+}
