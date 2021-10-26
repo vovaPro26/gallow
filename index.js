@@ -203,7 +203,7 @@ const checkUserInput = () => {
     if (isWordGuessed(enteredWord)) {
         wordCounter += 1;
         showGuesedWord(wordCounter)
-        showMessage("Ти виграв." + " Ти вгадав слово " + randomWord.word);
+        showMessage("Ти виграв!" + " Ти вгадав слово " + randomWord.word);
         allInput.classList.add("hiden");
         restartDiv.classList.remove("hiden");
         restartDiv.classList.add("refresh-button");
