@@ -7,19 +7,19 @@ let errorCounter = 0;
 let wordCounter = 0;
 
 let words = [
-    { "word": "ТРИКУТНИК", "description": "геометрична фігура"},
-    { "word": "КВАДРАТ", "description": "геометрична фігура"},
-    { "word": "КОЛО", "description": "геометрична фігура"},
-    { "word": "РОМБ", "description": "геометрична фігура"},
-    { "word": "ОВАЛ", "description": "геометрична фігура"},
-    { "word": "ПАРАЛЕЛЕПІПЕД", "description": "об'ємна геоментрична фігура"},
-    { "word": "ПРЯМОКУТНИК", "description": "геометрична фігура"},
-    { "word": "СЕРЦЕ", "description": "орган людини"},
-    { "word": "ПЛЮС", "description": "математичний знак"},
-    { "word":"МІНУС", "description": "математичний знак"},
-    { "word":"ДОРІВНЮЄ", "description": "математичний знак"},
+    { "word": "ТРИКУТНИК", "description": "геометрична фігура" },
+    { "word": "КВАДРАТ", "description": "геометрична фігура" },
+    { "word": "КОЛО", "description": "геометрична фігура" },
+    { "word": "РОМБ", "description": "геометрична фігура" },
+    { "word": "ОВАЛ", "description": "геометрична фігура" },
+    { "word": "ПАРАЛЕЛЕПІПЕД", "description": "об'ємна геоментрична фігура" },
+    { "word": "ПРЯМОКУТНИК", "description": "геометрична фігура" },
+    { "word": "СЕРЦЕ", "description": "орган людини" },
+    { "word": "ПЛЮС", "description": "математичний знак" },
+    { "word": "МІНУС", "description": "математичний знак" },
+    { "word": "ДОРІВНЮЄ", "description": "математичний знак" },
 ];
-const sayHello = function(){
+const sayHello = function () {
     const name = getUserName();
     if (!name.length) {
         alert(`Привіт, незнайомцю`);
@@ -30,12 +30,12 @@ const sayHello = function(){
 }
 
 
-const chooseRandomWord = function() {
-    let randNumber = randNum(0,words.length);
+const chooseRandomWord = function () {
+    let randNumber = randNum(0, words.length);
     return words[randNumber];
 }
 
-const startGame = function() {
+const startGame = function () {
     // alert(`ГРА ПОЧИНАЄТЬСЯ!!!`);
     errorCounter = 0;
     refreshHeart()
@@ -49,20 +49,20 @@ const startGame = function() {
     showWord1(randomWord.description)
     allInput.classList.remove("hiden");
 }
-    
-const showWord = function(arra) {
+
+const showWord = function (arra) {
     let word = document.getElementById("letters");
     word.innerText = arra.join(" ");
-    
+
 }
 
-const showWord1 = function(message) {
+const showWord1 = function (message) {
     let descriptionWordText = document.getElementById("descriptionForWord");
     descriptionWordText.innerText = message;
 }
 
-const errorHeart = function(errorCount) {
-    for (let i = 1;i <= 6; i++ ) {
+const errorHeart = function (errorCount) {
+    for (let i = 1; i <= 6; i++) {
         if (errorCount >= i) {
             let className = "heart" + i;
             let heart1 = document.getElementById(className);
@@ -71,8 +71,8 @@ const errorHeart = function(errorCount) {
     }
 }
 
-const refreshHeart = function() {
-    for (let i = 1;i <= 6 ; i++) {
+const refreshHeart = function () {
+    for (let i = 1; i <= 6; i++) {
         let className = "heart" + i
         let heart1 = document.getElementById(className);
         heart1.classList.remove("hiden")
@@ -81,10 +81,10 @@ const refreshHeart = function() {
 
 const askUserForLetter = function () {
     let letter = prompt("Яка буква?");
-    if(letter===null) {
+    if (letter === null) {
         return null;
     }
-    else if(letter.length !== 1) {
+    else if (letter.length !== 1) {
         ("Введи один символ :D");
     }
     else {
@@ -92,26 +92,26 @@ const askUserForLetter = function () {
     }
 }
 
-const isWordGuessed = function(arr) {
+const isWordGuessed = function (arr) {
     return !arr.includes("_");
 }
 
-const getWordTemplate = function(word) {
+const getWordTemplate = function (word) {
     let lowDashes = [];
-    for(let i = 0; i < word.word.length; i++) {
+    for (let i = 0; i < word.word.length; i++) {
         lowDashes.push("_");
     };
     return lowDashes;
 }
 
-const randNum = function(minNumber,maxNumber) {
+const randNum = function (minNumber, maxNumber) {
     var numberUn = maxNumber - minNumber;
-    var randomNumber = Math.floor(Math.random() * numberUn + minNumber );
+    var randomNumber = Math.floor(Math.random() * numberUn + minNumber);
     return randomNumber;
 }
 
-const getUserName = function() {
-    if(userName === "") {
+const getUserName = function () {
+    if (userName === "") {
         return `незнайомець`;
     }
     else {
@@ -119,7 +119,7 @@ const getUserName = function() {
     }
 }
 
-const userLoginName = function() {
+const userLoginName = function () {
     let GuesedWord1 = document.getElementById("GuesedWord1")
     let loginContainer = document.getElementById("loginContainer");
     let allInput = document.getElementById("gameHost")
@@ -136,7 +136,7 @@ const userLoginName = function() {
     }
 }
 
-const restartClick = function() {
+const restartClick = function () {
     startGame()
     errorCounter = 0
     let restartDiv = document.getElementById("RestartButton");
@@ -145,10 +145,10 @@ const restartClick = function() {
     showMessage("Починаємо знову☺");
 }
 
-const changeImg = function(errorCount) {
+const changeImg = function (errorCount) {
     let imageGallowsElement = document.getElementById("gallowsImage");
     let imageGallows = "Gallow" + errorCount + ".png";
-    imageGallowsElement.src=imageGallows;
+    imageGallowsElement.src = imageGallows;
     if (errorCounter === 0) {
         imageGallows = "Gallow0.png"
     }
@@ -163,7 +163,7 @@ const enterPress = (e) => {
     }
 }
 
-const buttonClick = function() {
+const buttonClick = function () {
     checkUserInput()
 }
 
@@ -173,19 +173,30 @@ const checkUserInput = () => {
     let inputLetter = inputLetterElement.value.toUpperCase();
     let allInput = document.getElementById("texteAndButomn");
 
-    if(inputLetter==="") {
+
+    if (inputLetter === "") {
         showMessage("Ну ти введеш щось, чи ні!?");
     }
-    else if (inputLetter.length>=2) {
+    else if (inputLetter.length >= 2) {
         showMessage("введи один символ");
         inputLetterElement.focus();
-        inputLetterElement.value="";
+        inputLetterElement.value = "";
+        if (inputLetter === randomWord.word) {
+            showMessage(`Чудово. Ти вгадав слово ${randomWord.word} повністю.`)
+            wordCounter += 1;
+            showGuesedWord(wordCounter)
+            allInput.classList.add("hiden");
+            restartDiv.classList.remove("hiden");
+            restartDiv.classList.add("refresh-button");
+            return
+
+        }
         return;
     }
     let checking = randomWord.word.includes(inputLetter);
     if (checking) {
-        for(let i = 0; i <= randomWord.word.length; i++) {
-            if (inputLetter===randomWord.word[i]) {
+        for (let i = 0; i <= randomWord.word.length; i++) {
+            if (inputLetter === randomWord.word[i]) {
                 enteredWord[i] = inputLetter;
             }
         }
@@ -194,8 +205,8 @@ const checkUserInput = () => {
         errorCounter += 1;
     }
     showWord(enteredWord);
-    
-    inputLetterElement.value="";
+
+    inputLetterElement.value = "";
     inputLetterElement.focus();
     errorHeart(errorCounter);
     changeImg(errorCounter);
@@ -217,27 +228,27 @@ const checkUserInput = () => {
     }
 }
 
-const showGuesedWord = function(guesedWords) {
+const showGuesedWord = function (guesedWords) {
     let wordCounterElement = document.getElementById("wordCounter");
     wordCounterElement.innerText = guesedWords;
 }
 
-const butomnOn = function() {
+const butomnOn = function () {
     let btn = document.getElementById("button");
     btn.className = "buton2";
 }
 
-const butomnOff = function() {
+const butomnOff = function () {
     let btn = document.getElementById("button");
     btn.className = "buton1";
 }
 
-const showMessage = function(message) {
+const showMessage = function (message) {
     let descriptionText = document.getElementById("description");
     descriptionText.innerText = message;
 }
 
-const showFirstMessage = function(message) {
+const showFirstMessage = function (message) {
     let descriptionText = document.getElementById("firstMassage");
     descriptionText.innerText = message;
 }
